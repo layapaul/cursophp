@@ -12,7 +12,7 @@ class Dates {
         return self::today()->addDays(1);
     }
     public static function longDate($date) {
-        Carbon::setLocate('es');
+        Carbon::setLocale('es');
         return $date->isoFormat('dddd DD [de] MMMM');
     }
 }

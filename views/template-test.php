@@ -1,0 +1,4 @@
+<h2><?= $subtitle ?></h2>
+<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam officia facere eius inventore quod, architecto earum sunt libero! Corporis rerum dicta sit quasi, aperiam in odit assumenda ad quos tempore!</p>
+<p>Delectus id, tenetur eos fugit corporis eius debitis eum, optio sed, deleniti non quis quia quae assumenda expedita laudantium nemo libero distinctio. Necessitatibus nobis neque dolorum optio voluptas distinctio dolore?</p>
+<p>Voluptatem expedita sint distinctio nihil molestias. Adipisci debitis recusandae eum vitae ipsam? Quaerat velit corrupti explicabo corporis in! Aliquid nostrum dignissimos quidem minus eum ab ipsum atque reiciendis voluptates error.</p>
