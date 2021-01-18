@@ -1,54 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spaghetti</title>
-    <link rel="stykesheet" href="/assets/styles.css">
-</head>
-<body>
-    <h1>Spaghetti php</h1>
     <?php
     require '../vendor/autoload.php';
 
-    use Carbon\Carbon;
-    use Lib\Breadcrumbs;
-    use Lib\Dates;
-    use League\Plates\Engine;
+    $router = new AltoRouter();
 
-    $templates = new Engine('../views');
+    $router->map('GET', '/','FrontController#home', 'home');
+    $router->map('GET', '/otra/carpeta','FrontController#otraCarpeta');
+    $router->map('GET', '/producto/[i:id]','FrontController#producto');
 
-    $date = Carbon::now();
-    echo $date->format('Y');
-
-    Carbon::SetLocale('es');
-    $today = Carbon::now();
-    $tomorrow = $today->addDays(1);
-    echo $tomorrow->isoFormat('dddd DD [de] MMMM');
-
-    // include '../Lib/Dates.php';
-    // include '../Lib/Breadcrumbs.php';
+    $match = $router->match();
     
+    if($match === false) {
+        open404Error();
+    } else {
+        callController($match);
+    }
 
-    $scrum = new Breadcrumbs();
-    $scrum->add('/link', 'Seccion');
-    $scrum->show();
-    
-    ?>
-
-
-    <p> Con php es facil hacer Spaguetti code </p>
-
-    <p>
-        Pero en 
-        <?= Dates::longDate(Dates::tomorrow()) ?>
-        lo vamos a solucionar.
-    </p>
-
-    <?php
-        echo $templates->render('template-test', [
-            'subtitle' => 'Welcome to it school',
-        ]);
-    ?>
-</body>
-</html>
+    function open404Error() {
+        header($_SERVER["SERVER_PROTOCOL"] . '404 Not Fount');
+        $controllerObject = new App\Controllers\FrontController;
+        $controllerObject->error404();
+    }
+    function callController ($match) {
+        list( $controller, $action ) = explode('#', $match['target'] );
+        $controller = 'App\Controllers\\'. $controller;
+        echo $controller.'#'.$action;
+        if(method_exists($controller, $action)){
+            
+            $controllerObject = new $controller;
+            call_user_func_array(array($controllerObject, $action), $match['params']);
+        } else {
+            open404Error();
+        }
+    }
