@@ -4,4 +4,4 @@
 require '../vendor/autoload.php';
 use League\Plates\Engine;
 $template = new Engine('../views');
-echo $template->render('page3');
+echo $template->render('pages3');

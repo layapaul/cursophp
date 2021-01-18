@@ -21,3 +21,8 @@
     <a href="http://">item 2</a>
     <a href="http://">item 3</a>
 <?php $this->stop() ?>
+
+
+<?php $this->start('footerJs') ?>
+<script src=""></script>
+<?php $this->stop() ?>

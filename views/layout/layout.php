@@ -17,5 +17,8 @@
         <Copyright class="">Copyright  lo que se</Copyright>
         <?= $this->section('footerLinks') ?>
     </footer>
+    
+    <script src="ruta/jquery"></script>
+    <?= $this->section('footerJS') ?>
 </body>
 </html>
