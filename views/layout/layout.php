@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <img src="/assets/images/logo.svg" alt="logo">
+    <p> <a href="/"><img src="/assets/images/logo.svg" alt="logo"></a></p>
     </header>
     <main>
         <?= $this->section('content') ?>
