@@ -1,4 +1,6 @@
-<?php $this->layout('layout/layout')?>
+<?php $this->layout('layout/layout', [
+    'mainTitle' => 'Otra carpeta',
+]) ?>
 
 <h1>Creando un sistema de routing. </h1>
 

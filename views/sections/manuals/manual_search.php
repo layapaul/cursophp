@@ -6,6 +6,7 @@
 <?php if(count($manuals) === 0): ?>
     <p>No hemos encontrado manuales relacionados con tu busqueda</p>
 <?php else: ?>
+
     <?php if($query === ''): ?>
         <p>No hemos recibido ningun criterio de busqueda, se muestran todos los manuales.</p>
     <?php else: ?>

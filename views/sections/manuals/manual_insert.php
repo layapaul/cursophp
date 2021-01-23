@@ -7,7 +7,7 @@
 
 <?= $this->insert('partials/errors', [ 'errors' => $errors ]) ?>
 
-<?= $this->insert('section/manuals/partials/manual-form', [
+<?= $this->insert('sections/manuals/partials/manual-form', [
     'data' => $data,
     'manual' =>[],
     'action' => $action,
