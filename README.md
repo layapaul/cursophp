@@ -1,3 +1,3 @@
 # cursophp
 
-para prueba
+Para prueba de git. esta funcionando. 
