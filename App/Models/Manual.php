@@ -21,7 +21,7 @@ class Manual {
         $prepared->execute([
             'slug' => $slug,
         ]);
-        $result - $prepapred->fetchAll();
+        $result = $prepared->fetchAll();
         if(count($result) === 0) {
             return null;
         }
